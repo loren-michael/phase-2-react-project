@@ -11,6 +11,7 @@
       "preptime": "15",
       "cooktime": "15",
       "servings": "2",
+      "favorite": false,
       "comments": [
         "From Amanda's trip to Austin, TX.",
         "Sometimes we cook the meat and onion together to save some time",
@@ -52,6 +53,7 @@
       "preptime": "10",
       "cooktime": "15",
       "servings": "12",
+      "favorite": false,
       "comments": [
         "Switch the baking soda and baking powder amounts for a better cookie!",
         "Freeze dough in portions on a cookie sheet and package together once frozen.",
@@ -95,6 +97,7 @@
       "preptime": "30",
       "cooktime": "40",
       "servings": "8",
+      "favorite": false,
       "comments": [
         "Use gardein chicken scallopini for the chicken.",
         "Bisquick dumplings are great with this!"
@@ -134,6 +137,7 @@
       "preptime": "10",
       "cooktime": "40",
       "servings": "8",
+      "favorite": false,
       "comments": [
         "We use trumpets for the noodles instead of lasagna noodles.",
         "Soup with noodles don't freeze well and aren't great reheated, so let's scale this recipe next time we make it."
@@ -178,6 +182,7 @@
       "preptime": "30",
       "cooktime": "60",
       "servings": "8",
+      "favorite": false,
       "comments": [],
       "instructions": [
         "Make the tomato sauce: Heat oil in a large, heavy-bottomed pot over medium heat. Add onion and garlic and season with salt and pepper. Cook, stirring occasionally, until the onion is totally softened and translucent (without letting it brown), 8 to 10 minutes. Add tomato paste and continue to cook, stirring until it has turned a deeper brick-red color, tinting the oil and onions a fiery orange color, about 2 minutes. Crush the whole tomatoes by hand and add them (including the juice) and the tomato purée to the pot, stirring to scrape up any bits from the bottom of the pot. Season with salt and pepper and add red pepper flakes, if using. Bring to a simmer and cook, stirring occasionally, until the tomato sauce has thickened and flavors have come together, 20 to 30 minutes.",
@@ -217,6 +222,7 @@
       "preptime": "10",
       "cooktime": "20",
       "servings": "4",
+      "favorite": false,
       "comments": [
         "So good when we get ground cherries from the farmer's market."
       ],
@@ -253,6 +259,7 @@
       "preptime": "13 hours",
       "cooktime": "60",
       "servings": "8",
+      "favorite": false,
       "comments": [],
       "instructions": [
         "Butter a 9 x 13-inch baking dish (or a tall-sided 12-inch ovenproof skillet) and arrange the cubed bread in the dish.",
@@ -290,6 +297,7 @@
       "preptime": "60",
       "cooktime": "30",
       "servings": "4",
+      "favorite": false,
       "comments": [],
       "instructions": [
         "To make the spicy sunflower seeds, preheat the oven to 350°F. Toss the seeds with the other ingredients in a large bowl, until well coated. Spread the coated seeds out on a baking sheet in a thin even layer. Bake for 15 minutes or until well toasted, allow to cool completely before using.",
@@ -358,6 +366,7 @@
       "preptime": "20",
       "cooktime": "75",
       "servings": "6",
+      "favorite": false,
       "comments": [
         "Tastes great but takes forever!"
       ],
@@ -403,6 +412,7 @@
       "preptime": "20",
       "cooktime": "40",
       "servings": "6",
+      "favorite": false,
       "comments": [
         "Use this as a base recipe for regular manicotti or stuffed shells"
       ],
@@ -441,6 +451,7 @@
       "preptime": "10",
       "cooktime": "20",
       "servings": "28",
+      "favorite": false,
       "instructions": [
         "Place all ingredients into bowl + mix except egg whites",
         "Mix (whip) egg whites in separate bowl",
@@ -470,6 +481,7 @@
       "preptime": "10",
       "cooktime": "25",
       "servings": "4",
+      "favorite": false,
       "instructions": [
         "Bring cider, butter, brown sugar, vanilla, and cinnamon to a boil over medium-high heat in a large saucepan. Reduce heat and boil gently, whisking occasionally, until thick and syrupy, 30–45 minutes.",
         "Preheat oven to 425°. Whisk eggs, milk, flour, vanilla, salt, and ½ tsp. cinnamon in a medium bowl until smooth.",
@@ -508,6 +520,7 @@
       "preptime": "5",
       "cooktime": "25",
       "servings": "4",
+      "favorite": false,
       "instructions": [
         "In a large skillet, saute the onion and bell peppers in olive oil for 3 to 5 minutes or until onions are soft.",
         "Reduce heat to medium-low and add the vegetable broth and tomato sauce, stirring to combine well. Once the broth and tomato sauce is combined and hot, add the chili powder, soy sauce, hot sauce or Tabasco sauce, sugar, and TVP, stirring well to combine.",
@@ -538,6 +551,7 @@
       "preptime": "15",
       "cooktime": "15",
       "servings": "4",
+      "favorite": false,
       "instructions": [
         "Heat 2 Tbsp. oil in a small skillet over medium. Cook garlic, swirling in pan often, until golden and crisp, about 2 minutes. Transfer garlic to a small bowl with a slotted spoon.",
         "Add panko to same skillet and cook, stirring often, until golden, about 5 minutes; season with salt and pepper. Transfer to bowl with garlic.",
@@ -576,6 +590,7 @@
       "preptime": "20",
       "cooktime": "45",
       "servings": "4",
+      "favorite": false,
       "instructions": [
         "Pour farro into a medium saucepan of boiling salted water, reduce heat, and simmer, stirring occasionally, until tender, 25–30 minutes. Drain farro and spread out on a rimmed baking sheet; let cool.",
         "Meanwhile, using a slotted spoon, carefully lower eggs into a small saucepan of boiling water and cook 6½ minutes for an oozy, jammy yolk or 7 minutes for a slightly firmer middle. Transfer eggs to a bowl of ice water with slotted spoon and let sit until cool enough to handle, about 2 minutes. Remove eggs from ice water; peel and slice in half lengthwise.",
@@ -615,6 +630,7 @@
       "preptime": "90 mins",
       "cooktime": "5.5 hrs",
       "servings": "12",
+      "favorite": false,
       "instructions": [
         "Preheat the oven to 325°. In a very large skillet, heat the oil. Add the oyster and white mushrooms, season with salt and pepper and cook over high heat, stirring, until starting to soften, about 5 minutes. Reduce the heat to moderate. Add the butter, shallots and thyme and cook, stirring often, until the mushrooms are tender, about 12 minutes longer. Season with salt and pepper and let cool.",
         "Scatter 1/4 cup of the cheese and half of the mushrooms evenly over the bottom of the Buttery Pastry Shell. In a blender, mix half each of the milk, cream and eggs and season with 1 1/2 teaspoons of salt, 1/8 teaspoon of pepper and a pinch of nutmeg at high speed until frothy, about 1 minute. Pour the custard into the pastry shell. Top with another 1/4 cup of cheese and the remaining mushrooms. Make a second batch of custard with the remaining milk, cream and eggs, plus the same amount of salt, pepper and nutmeg as before and pour into the shell. Scatter the remaining 1/4 cup of cheese on top.",
@@ -649,6 +665,7 @@
       "preptime": "10 mins",
       "cooktime": "30 mins",
       "servings": "6",
+      "favorite": false,
       "instructions": [
         "Cook your pasta according to package directions. Drain and let cool. ",
         "Make the dressing. Add all the dressing ingredients to a blender. Blend until smooth, taste and adjust seasoning. ",
@@ -683,6 +700,7 @@
       "preptime": "15",
       "cooktime": "",
       "servings": "Makes about 2 cups",
+      "favorite": false,
       "instructions": [
         "Remove husks and silk from 2 ears of corn. Cook corn and 1 poblano chile in a dry medium cast-iron skillet over high heat, turning occasionally, until corn is charred in spots and chile is blistered all over, 10–14 minutes.",
         "Transfer corn and chile to a cutting board and let cool for a minute or two. Lay corn flat and slice along one side to shave off kernels. Repeat, rotating cob, until all kernels have been cut off. Discard cobs. Transfer corn to a medium bowl.",
@@ -720,6 +738,7 @@
       "preptime": "15",
       "cooktime": "10",
       "servings": "4",
+      "favorite": false,
       "instructions": [
         "Arrange a rack in upper third of oven; preheat to 400°. Combine scallion, 1/4 cup cilantro, and next 4 ingredients in a small bowl. Whisk in 1 1/2 tablespoon oil. Season cilantro-lime sauce with salt and pepper; set aside.",
         "Heat remaining 2 tablespoons oil in a large skillet over high heat until shimmering. Working in batches if needed, add bok choy, cut side down, and sear until golden brown, 2-4 minutes per batch. Turn bok choy cut side up and remove pan from heat. Add sake. Season flounder fillets with salt and pepper and arrange in a single layer over bok choy. Roast in oven until fish is just cooked through, 8-10 minutes.",
@@ -751,6 +770,7 @@
       "preptime": "15",
       "cooktime": "35",
       "servings": "8",
+      "favorite": false,
       "instructions": [
         "Preheat oven to 350.",
         "Lightly butter a deep 2 1/2 quart baking dish.",
@@ -794,6 +814,7 @@
       "preptime": "10 mins",
       "cooktime": "20 mins",
       "servings": "6",
+      "favorite": false,
       "instructions": [
         "Make a garlic-lemon butter. Mince and mash the garlic and 1/2 teaspoon of the salt together to make a paste. Transfer to a small bowl, add 4 tablespoons of the butter and the lemon zest, and mash together until combined; set aside."
       ],
