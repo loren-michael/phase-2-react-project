@@ -18,9 +18,9 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Search />
-      <Filter />
-      <RecipeContainer />
+      <Search recipes={recipes} />
+      <Filter recipes={recipes} />
+      <RecipeContainer recipes={recipes} />
     </div>
   );
 }

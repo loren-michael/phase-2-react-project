@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Search() {
+function Search({ recipes }) {
     return (
         <div>Search</div>
     )

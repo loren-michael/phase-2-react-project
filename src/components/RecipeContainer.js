@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RecipeContainer() {
+function RecipeContainer({ recipes }) {
     return (
         <div>RecipeContainer</div>
     )
