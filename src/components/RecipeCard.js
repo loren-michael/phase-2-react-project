@@ -3,8 +3,13 @@ import React from 'react';
 import { Card } from "semantic-ui-react";
 
 function RecipeCard({ recipe }) {
+
+    function handleClick(){
+        console.log(recipe.name)
+    }
+
     return (
-        <Card>
+        <Card onClick={handleClick} >
             <div className="image" >
                 <img src={recipe.img} alt={recipe.name} />
             </div>
