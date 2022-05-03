@@ -8,6 +8,7 @@ import RecipeContainer from "./RecipeContainer"
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
+  const [ingSearch, setIngSearch] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:3000/recipes`)
@@ -17,11 +18,7 @@ function App() {
 
   const searchFilter = recipes.filter((rec) => rec.name.toLowerCase().includes(search.toLowerCase()))
 
-  console.log(searchFilter)
-
-  // function handleSearch() {
-  //   console.log(search)
-  // }
+  const ingFilter = searchFilter.filter((rec) => rec.ingredients.filter((ing) => ing.includes(ingSearch.toLowerCase())))
 
   // function handleAddRecipe(newRecipe) {
   //   setRecipes([...recipes, newRecipe])
@@ -30,9 +27,12 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Search recipes={recipes} search={search} setSearch={setSearch} />
+      <Search 
+        setSearch={setSearch} 
+        setIngSearch={setIngSearch}
+      />
       <Filter recipes={recipes} />
-      <RecipeContainer recipes={searchFilter} />
+      <RecipeContainer recipes={ingFilter} />
     </div>
   );
 }
