@@ -8,6 +8,7 @@ import RecipeContainer from "./RecipeContainer"
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:3000/recipes`)
@@ -15,10 +16,18 @@ function App() {
     .then(recipes => setRecipes(recipes))
   }, [])
 
+  // function handleSearch() {
+  //   console.log(search)
+  // }
+
+  // function handleAddRecipe(newRecipe) {
+  //   setRecipes([...recipes, newRecipe])
+  // }
+
   return (
     <div>
       <NavBar />
-      <Search recipes={recipes} />
+      <Search recipes={recipes} search={search} setSearch={setSearch} />
       <Filter recipes={recipes} />
       <RecipeContainer recipes={recipes} />
     </div>

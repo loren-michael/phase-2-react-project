@@ -1,8 +1,11 @@
 import React from 'react'
 
-function Search({ recipes }) {
+function Search({ setSearch }) {
+
     return (
-        <div>Search</div>
+        <div>
+            Search for a recipe: <input type="text" onChange={(e) => setSearch(e.target.value)} />
+        </div>
     )
 }
 
