@@ -1,5 +1,4 @@
 import '../App.css';
-// import { Card } from "semantic-ui-react";
 import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import Filter from "./Filter";
@@ -16,6 +15,10 @@ function App() {
     .then(recipes => setRecipes(recipes))
   }, [])
 
+  const searchFilter = recipes.filter((rec) => rec.name.toLowerCase().includes(search.toLowerCase()))
+
+  console.log(searchFilter)
+
   // function handleSearch() {
   //   console.log(search)
   // }
@@ -29,7 +32,7 @@ function App() {
       <NavBar />
       <Search recipes={recipes} search={search} setSearch={setSearch} />
       <Filter recipes={recipes} />
-      <RecipeContainer recipes={recipes} />
+      <RecipeContainer recipes={searchFilter} />
     </div>
   );
 }
