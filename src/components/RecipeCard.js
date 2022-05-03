@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Card } from "semantic-ui-react";
 
-function RecipeCard() {
+function RecipeCard({ recipe }) {
     return (
-        <div>RecipeCard</div>
+        <Card>
+            <h4>{recipe.name}</h4>
+        </Card>
     )
 }
 
