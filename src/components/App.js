@@ -21,8 +21,12 @@ function App() {
     });
   }, [])
 
-  const searchFilter = recipes.filter((rec) => rec.name.toLowerCase().includes(search.toLowerCase()))  
+  const searchFilter = recipes.filter((rec) => rec.name.toLowerCase().includes(search.toLowerCase()))
 
+  function handleSearchChange() {
+    const searchFilter = recipes.filter((rec) => rec.name.toLowerCase().includes(search.toLowerCase()));
+    setDisplayRecipes(searchFilter)
+  }
 
   function handleFilterChange(mealSelection) {
     if (mealSelection !== "All") {
@@ -43,8 +47,10 @@ function App() {
       <NavBar />
       <Search 
         setSearch={setSearch} 
+        onSearchChange={handleSearchChange}
       />
       <Filter 
+        mealFilter={mealFilter}
         setMealFilter={setMealFilter}
         onFilterChange={handleFilterChange}
       />

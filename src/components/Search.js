@@ -1,12 +1,16 @@
 import React from 'react'
 
-function Search({ setSearch }) {
+function Search({ setSearch, onSearchChange }) {
+
+    function handleSearchChange(e) {
+        const searchInput = e.target.value;
+        setSearch(searchInput);
+        onSearchChange(searchInput)
+    }
 
     return (
         <div>
-            Search for a recipe: <input type="text" onChange={(e) => setSearch(e.target.value)} />
-            {/* <br></br> 
-            Search for an ingredient: <input type="text" onChange={(e) => setIngSearch(e.target.value)} /> */}
+            Search for a recipe: <input type="text" onChange={handleSearchChange} />
         </div>
     )
 }

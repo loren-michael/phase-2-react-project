@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Filter({ setMealFilter, onFilterChange }) {
+function Filter({ setMealFilter, onFilterChange, mealFilter }) {
 
     function handleFilterChange(e) {
         const mealSelection = e.target.value;
