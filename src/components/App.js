@@ -18,7 +18,12 @@ function App() {
 
   const searchFilter = recipes.filter((rec) => rec.name.toLowerCase().includes(search.toLowerCase()))
 
-  const ingFilter = searchFilter.filter((rec) => rec.ingredients.filter((ing) => ing.includes(ingSearch.toLowerCase())))
+
+  // function filterByIngredients(ingSearch) {
+      // if recipe ingredients include ingSearch, return recipe
+  // }
+
+  const ingFilter = searchFilter.filter((recipe) => recipe.ingredients.includes(ingSearch.toLowerCase()))
 
   // function handleAddRecipe(newRecipe) {
   //   setRecipes([...recipes, newRecipe])
@@ -30,9 +35,10 @@ function App() {
       <Search 
         setSearch={setSearch} 
         setIngSearch={setIngSearch}
+        // filterByIngredients={filterByIngredients}
       />
       <Filter recipes={recipes} />
-      <RecipeContainer recipes={ingFilter} />
+      <RecipeContainer recipes={ingFilter} /> {/* this isn't working because includes does not iterate through an array - line 26 */}
     </div>
   );
 }
