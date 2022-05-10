@@ -1,7 +1,6 @@
 import '../App.css';
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from "./NavBar";
 import Filter from "./Filter";
 import Search from "./Search";
@@ -46,28 +45,18 @@ function App() {
   // }
 
 
-
-
-
   return (
     <div>
       <Router>
-      <NavBar />
+        <NavBar /> 
         <Switch>
           <Route path="/recipeform">
             <RecipeForm />
           </Route>
           <Route exact path="/">
-            <Search 
-              setSearch={setSearch} 
-              onSearchChange={handleSearchChange}
-            />
-            <Filter 
-              mealFilter={mealFilter}
-              setMealFilter={setMealFilter}
-              onFilterChange={handleFilterChange}
-            />            
-            <RecipeContainer recipes={displayRecipes}/>
+            <Search setSearch={setSearch} onSearchChange={handleSearchChange} />
+            <Filter mealFilter={mealFilter} setMealFilter={setMealFilter} onFilterChange={handleFilterChange} />            
+            <RecipeContainer recipes={displayRecipes} />
           </Route>      
         </Switch>
       </Router>  

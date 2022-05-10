@@ -5,7 +5,7 @@ import { Card } from "semantic-ui-react";
 function RecipeCard({ recipe }) {
 
     function handleClick(){
-        console.log(recipe.name)
+        console.log(recipe.id)
     }
 
     return (
