@@ -38,6 +38,10 @@ function App() {
     }
   }
 
+  function handleRecDetails(id) {
+    console.log(id)
+  }
+
   // function handleAddRecipe(newRecipe) {
   //   setRecipes([...recipes, newRecipe])
   // }
@@ -58,6 +62,7 @@ function App() {
               mealFilter={mealFilter}
               setMealFilter={setMealFilter}
               onFilterChange={handleFilterChange}
+              onRecDetails={handleRecDetails}
             />} />
         </Routes>
     </div>
