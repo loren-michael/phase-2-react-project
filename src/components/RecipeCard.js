@@ -4,13 +4,12 @@ import { Card } from "semantic-ui-react";
 
 function RecipeCard({ recipe, onRecDetails }) {
 
-    function handleClick(){
-        onRecDetails(recipe.id)
-    }
+    function handleClick(e) {
+        // this function will bring us to a details page
+        console.log(recipe.id);
+        onRecDetails(e.target.id)
+    };
 
-    function handleFavorite() {
-        console.log(recipe.favorite)
-    }
 
     return (
         <Card className="ui centered card" >
@@ -24,12 +23,13 @@ function RecipeCard({ recipe, onRecDetails }) {
                     <span>
                         {recipe.mealtype}
                     </span>
-                    <span className="right floated" onClick={handleFavorite}>
+                    <span className="right floated" >
                         {recipe.favorite ? <p>❤️</p> : <p>🖤</p>}
                     </span>
                 </div>
         </Card>
     )
+
 };
 
 export default RecipeCard
