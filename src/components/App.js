@@ -1,13 +1,10 @@
 import '../App.css';
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import NavBar from "./NavBar";
 import Home from "./Home";
-// import Filter from "./Filter";
-// import Search from "./Search";
-// import RecipeContainer from "./RecipeContainer"
-import RecipeForm from "./RecipeForm"
-// import RecipeDetails from './RecipeDetails';
+import RecipeForm from "./RecipeForm";
+import RecipeDetails from "./RecipeDetails";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -51,6 +48,7 @@ function App() {
         <NavBar /> 
         <Routes>
           <Route path="/recipeform" element={<RecipeForm />} />
+          {/* <Route *build this route for recipe details* /> */}
           <Route 
             exact path="/" 
             element={<Home 
@@ -61,9 +59,6 @@ function App() {
               setMealFilter={setMealFilter}
               onFilterChange={handleFilterChange}
             />} />
-            {/* <Search setSearch={setSearch} onSearchChange={handleSearchChange} />
-            <Filter mealFilter={mealFilter} setMealFilter={setMealFilter} onFilterChange={handleFilterChange} />            
-            <RecipeContainer recipes={displayRecipes} />      */}
         </Routes>
     </div>
   );
