@@ -1,10 +1,11 @@
 import '../App.css';
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from "./NavBar";
-import Filter from "./Filter";
-import Search from "./Search";
-import RecipeContainer from "./RecipeContainer"
+import Home from "./Home";
+// import Filter from "./Filter";
+// import Search from "./Search";
+// import RecipeContainer from "./RecipeContainer"
 import RecipeForm from "./RecipeForm"
 // import RecipeDetails from './RecipeDetails';
 
@@ -47,19 +48,23 @@ function App() {
 
   return (
     <div>
-      <Router>
         <NavBar /> 
-        <Switch>
-          <Route path="/recipeform">
-            <RecipeForm />
-          </Route>
-          <Route exact path="/">
-            <Search setSearch={setSearch} onSearchChange={handleSearchChange} />
+        <Routes>
+          <Route path="/recipeform" element={<RecipeForm />} />
+          <Route 
+            exact path="/" 
+            element={<Home 
+              recipes={displayRecipes} 
+              setSearch={setSearch}
+              onSearchChange={handleSearchChange}
+              mealFilter={mealFilter}
+              setMealFilter={setMealFilter}
+              onFilterChange={handleFilterChange}
+            />} />
+            {/* <Search setSearch={setSearch} onSearchChange={handleSearchChange} />
             <Filter mealFilter={mealFilter} setMealFilter={setMealFilter} onFilterChange={handleFilterChange} />            
-            <RecipeContainer recipes={displayRecipes} />
-          </Route>      
-        </Switch>
-      </Router>  
+            <RecipeContainer recipes={displayRecipes} />      */}
+        </Routes>
     </div>
   );
 
