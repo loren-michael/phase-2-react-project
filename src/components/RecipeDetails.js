@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-function RecipeDetails({ recipe }) {
-    const [thisRecipe, setRecipe] = useState(recipe);
+function RecipeDetails({ recipe, recId }) {
+    const [recDetails, setRecDetails] = useState(recipe);
     const [favorite, setFavorite] = useState(recipe.favorite);
-
+    console.log(recId)
 
     // function handleFavorite() {
     //     const newFavorite = !favorite;
@@ -23,11 +23,8 @@ function RecipeDetails({ recipe }) {
     // };
 
     return (
-        <div>
-            <h2>{thisRecipe.name}</h2>
-
-
-
+        <div className="recipe-details" >
+            <h2>Recipe details</h2>
         </div>
     )
 }

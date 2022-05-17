@@ -1,6 +1,6 @@
 import '../App.css';
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 import NavBar from "./NavBar";
 import Home from "./Home";
 import RecipeForm from "./RecipeForm";
@@ -11,6 +11,8 @@ function App() {
   const [search, setSearch] = useState("");
   const [mealFilter, setMealFilter] = useState("All");
   const [displayRecipes, setDisplayRecipes] = useState([]);
+  const params = useParams();
+console.log(params)
 
 
   useEffect(() => {
@@ -52,7 +54,7 @@ function App() {
         <NavBar /> 
         <Routes>
           <Route path="/recipeform" element={<RecipeForm />} />
-          {/* <Route *build this route for recipe details* /> */}
+          <Route exact path={`/${params}`} element={<RecipeDetails recId={params} />} />
           <Route 
             exact path="/" 
             element={<Home 

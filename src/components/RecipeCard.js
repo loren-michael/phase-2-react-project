@@ -14,7 +14,8 @@ function RecipeCard({ recipe, onRecDetails }) {
 
 
     return (
-        <Card className="ui centered card" >
+        <div className="ui link cards">
+            <Card className="ui cards" >
                 <div className="image" >
                     <img src={recipe.img} alt={recipe.name} />
                 </div>
@@ -29,7 +30,8 @@ function RecipeCard({ recipe, onRecDetails }) {
                         {recipe.favorite ? <p>❤️</p> : <p>🖤</p>}
                     </span>
                 </div>
-        </Card>
+            </Card>
+        </div>
     )
 
 };
