@@ -9,7 +9,7 @@ function Filter({ setMealFilter, onFilterChange, mealFilter }) {
     }
 
     return (
-        <div> Select a meal: <select name="mealtype" id="mealtype" onChange={handleFilterChange} >
+        <div className="filter"> Select a meal: <select name="mealtype" id="mealtype" onChange={handleFilterChange} >
                 <option value="All">All</option>
                 <option value="Dinner">Dinner</option>
                 <option value="Lunch">Lunch</option>

@@ -9,7 +9,7 @@ function Search({ setSearch, onSearchChange }) {
     }
 
     return (
-        <div>
+        <div className="search">
             Search for a recipe: <input type="text" onChange={handleSearchChange} />
         </div>
     )
