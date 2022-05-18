@@ -1,4 +1,5 @@
 import React from "react"
+import { Card } from "semantic-ui-react";
 import RecipeCard from "./RecipeCard"
 
 function RecipeContainer({ recipes, onRecDetails }) {
@@ -10,12 +11,21 @@ function RecipeContainer({ recipes, onRecDetails }) {
     //         )
     //     })
     // )
-    const renderRecipes = Object.keys(recipes).map((recipeId) => (
-        <RecipeCard key={recipeId} recipe={recipeId} onRecDetails={onRecDetails} />
-    ))
+    // const renderRecipes = Object.keys(recipes).map((recipe) => (
+    //         <Card.Group>
+    //             <RecipeCard key={recipe.id} recipe={recipe} onRecDetails={onRecDetails} />
+    //         </Card.Group>
+    // ))
 
     return (
-        <ul>{renderRecipes}</ul>
+        <div className="ui centered link cards" id="rec-container" >
+            {recipes.map((recipe) => {
+                return (
+                    <RecipeCard key={recipe.id} recipe={recipe} onRecDetails={onRecDetails} />
+                )
+            })}
+        </div>
+
     )
 
 
