@@ -1,5 +1,4 @@
 import React from "react"
-import { Card } from "semantic-ui-react";
 import RecipeCard from "./RecipeCard"
 
 function RecipeContainer({ recipes, onRecDetails }) {
@@ -25,7 +24,6 @@ function RecipeContainer({ recipes, onRecDetails }) {
                 )
             })}
         </div>
-
     )
 
 

@@ -8,9 +8,17 @@ function Search({ setSearch, onSearchChange }) {
         onSearchChange(searchInput)
     }
 
+    // function handleIngSearchChange(e) {
+    //     const ingSearchInput = e.target.value;
+    //     setIngSearch(ingSearchInput);
+    //     onIngSearchChange(ingSearchInput)
+    // }
+
     return (
         <div className="search">
             Search for a recipe: <input type="text" onChange={handleSearchChange} />
+            {/* <br></br> */}
+            {/* Search for an ingredient: <input type="text" onChange={handleIngSearchChange} /> */}
         </div>
     )
 }

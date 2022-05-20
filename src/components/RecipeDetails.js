@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-function RecipeDetails({ recipe, recId }) {
-    const [recDetails, setRecDetails] = useState(recipe);
-    const [favorite, setFavorite] = useState(recipe.favorite);
+function RecipeDetails({ recId }) {
+    // const [recDetails, setRecDetails] = useState(recipe);
+    // const [favorite, setFavorite] = useState(recipe.favorite);
     console.log(recId)
+
+    // useEffect(() => {
+    //     fetch(`http://localhost:3000/recipes/${recId}`)
+    //     .then(r => r.json())
+    //     .then((recipe) =>console.log(recipe))
+    // })
 
     // function handleFavorite() {
     //     const newFavorite = !favorite;
@@ -22,9 +28,15 @@ function RecipeDetails({ recipe, recId }) {
     //     // .then(console.log(recipe.favorite))
     // };
 
+    // const renderRecipe = () => {
+    //     fetch(`http://localhost:3000/recipes/${recId}`)
+    //     .then(r => r.json())
+    //     .then(recipe => console.log(recipe))
+    // }
+
     return (
         <div className="recipe-details" >
-            <h2>Recipe details</h2>
+            {recId}
         </div>
     )
 }

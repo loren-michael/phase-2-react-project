@@ -9,10 +9,12 @@ import RecipeDetails from "./RecipeDetails";
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
+  // const [ingSearch, setIngSearch] = useState("");
   const [mealFilter, setMealFilter] = useState("All");
   const [displayRecipes, setDisplayRecipes] = useState([]);
   const params = useParams();
-console.log(params)
+  console.log(params)
+
 
 
   useEffect(() => {
@@ -26,10 +28,17 @@ console.log(params)
 
   const searchFilter = recipes.filter((rec) => rec.name.toLowerCase().includes(search.toLowerCase()))
 
+  // const ingFilter = searchFilter.filter((rec) => rec.ingredients.filter((ing) => ing.toLowerCase().includes(ingSearch.toLowerCase())))
+
   function handleSearchChange() {
     const searchFilter = recipes.filter((rec) => rec.name.toLowerCase().includes(search.toLowerCase()));
     setDisplayRecipes(searchFilter)
   }
+
+  // function handleIngSearchChange() {
+  //   const ingSearchFilter = searchFilter.filter((rec) => rec.ingredients.filter((ing) => ing.toLowerCase().includes(ingSearch)));
+  //   setDisplayRecipes(ingSearchFilter)
+  // }
 
   function handleFilterChange(mealSelection) {
     if (mealSelection !== "All") {
@@ -65,6 +74,8 @@ console.log(params)
               setMealFilter={setMealFilter}
               onFilterChange={handleFilterChange}
               onRecDetails={handleRecDetails}
+              // setIngSearch={setIngSearch}
+              // onIngSearchChange={handleIngSearchChange}
             />} />
         </Routes>
     </div>
