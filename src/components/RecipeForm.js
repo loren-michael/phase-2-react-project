@@ -17,6 +17,11 @@ function RecipeForm({ onRecipeSubmit }) {
         comments: [],
     })
 
+    function handleChange(e) {
+        setNewRecipe({...newRecipe, [e.target.name]: e.target.value});
+        console.log(newRecipe)
+    }
+
     function handleRecipeSubmit(e) {
         e.preventDefailt();
 
@@ -29,23 +34,29 @@ function RecipeForm({ onRecipeSubmit }) {
             <Form>
                 <Form.Field id="add-name" >
                     <label>Recipe Title:  </label>
-                    <input required placeholder="recipe name" value={newRecipe.name} />
+                    <input 
+                        name="name"
+                        required
+                        placeholder="recipe name" 
+                        value={newRecipe.name} 
+                        onChange={handleChange}
+                    />
                 </Form.Field>
                 <Form.Field id="add-image" >
                     <label>Image URL:  </label>
-                    <input required placeholder="image URL" value={newRecipe.img} />
+                    <input required placeholder="image URL" name="img" onChange={handleChange} />
                 </Form.Field>
                 <Form.Field id="add-author" >
                     <label>Author:  </label>
-                    <input placeholder="author's name" value={newRecipe.author} />
+                    <input placeholder="author's name" name="author" onChange={handleChange} />
                 </Form.Field>
                 <Form.Field id="add-source" >
                     <label>Source Website:  </label>
-                    <input placeholder="link to original recipe" value={newRecipe.source} />
+                    <input placeholder="link to original recipe" name="source" onChange={handleChange} />
                 </Form.Field>
                 <Form.Field id="add-mealtype" >
                     <label>Meal Type:  </label>
-                    <select required value={newRecipe.mealtype} >
+                    <select required name="mealtype" onChange={handleChange} >
                         <option></option>
                         <option>Dinner</option>
                         <option>Lunch</option>
@@ -55,15 +66,15 @@ function RecipeForm({ onRecipeSubmit }) {
                 </Form.Field>
                 <Form.Field id="add-preptime" >
                     <label>Prep time:  </label>
-                    <input placeholder="prep time" value={newRecipe.preptime} />
+                    <input placeholder="prep time" name="preptime" onChange={handleChange} />
                 </Form.Field>
                 <Form.Field id="add-cooktime" >
                     <label>Cook time:  </label>
-                    <input placeholder="cook time" value={newRecipe.cooktime} />
+                    <input placeholder="cook time" name="cooktime" onChange={handleChange} />
                 </Form.Field>
                 <Form.Field id="add-servings" >
                     <label>Servings:  </label>
-                    <input placeholder="number of servings" value={newRecipe.servings} />
+                    <input placeholder="number of servings" name="servings" onChange={handleChange} />
                 </Form.Field>
                 <Form.Field id="add-ingredient" >
                     <label>Ingredients:  </label>
