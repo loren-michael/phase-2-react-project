@@ -13,7 +13,7 @@ function App() {
   const [mealFilter, setMealFilter] = useState("All");
   const [displayRecipes, setDisplayRecipes] = useState([]);
   const params = useParams();
-  console.log(params)
+  // console.log(params)
 
 
 
@@ -53,16 +53,17 @@ function App() {
     console.log(id)
   }
 
-  // function handleAddRecipe(newRecipe) {
-  //   setRecipes([...recipes, newRecipe])
-  // }
+  function onAddRecipe(newRecipe) {
+    console.log(newRecipe)
+    // setRecipes([...recipes, newRecipe])
+  }
 
 
   return (
     <div>
         <NavBar /> 
         <Routes>
-          <Route path="/recipeform" element={<RecipeForm />} />
+          <Route path="/recipeform" element={<RecipeForm onRecipeSubmit={onAddRecipe} />} />
           <Route exact path={`/${params}`} element={<RecipeDetails recId={params} />} />
           <Route 
             exact path="/" 
