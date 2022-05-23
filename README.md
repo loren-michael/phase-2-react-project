@@ -22,7 +22,7 @@ Your browser should open to the Recipe Manager with a list of recipes there for 
 
 # Functionality
 
-At its current iteration, the functionality of this project is limited yet powerful. The Recipe Manager has ways for you to Add A Recipe using a detailed form, filter the list of recipes by the type of meal (dinner, lunch, sides), search through the recipes, and add comments to each of the recipes so you can keep track of any notes you have.
+At its current iteration, the functionality of this project is limited yet powerful. The Recipe Manager has ways for you to Add A Recipe using a detailed form, filter the list of recipes by the type of meal (dinner, lunch, breakfast), search through the recipes, and add comments to each of the recipes so you can keep track of any notes you have.
 
 # Future Plans
 
