@@ -29,15 +29,16 @@ function RecipeForm({ onRecipeSubmit }) {
         const addButton = e.target.parentNode;
         addButton.insertBefore(newIngBox, e.target);
         addButton.insertBefore(lineBreak, e.target);
-        
-        
-        // const newIng = <div>Test</div>;
-        // console.log(e.target.parentNode)
-        // e.target.parentNode.insertBefore(newIng, e.target)
     }
 
     function handleAddIns(e) {
-        console.log(e.target.parentNode)
+        const lineBreak = document.createElement("br");
+        const newInsBox = document.createElement("input");
+        newInsBox.className = "add-instructions";
+        newInsBox.name = "add-instructions";
+        const addButton = e.target.parentNode;
+        addButton.insertBefore(newInsBox, e.target);
+        addButton.insertBefore(lineBreak, e.target);
     }
 
     function handleRecipeSubmit(e) {
