@@ -14,12 +14,12 @@ function RecipeForm({ onRecipeSubmit }) {
         instructions: [],
         ingredients: [],
         comments: [],
-    })
+    });
 
     function handleChange(e) {
         setNewRecipe({...newRecipe, [e.target.name]: e.target.value});
         console.log(newRecipe)
-    }
+    };
 
     function handleAddIng(e) {
         const lineBreak = document.createElement("br");
@@ -29,7 +29,7 @@ function RecipeForm({ onRecipeSubmit }) {
         const addButton = e.target.parentNode;
         addButton.insertBefore(newIngBox, e.target);
         addButton.insertBefore(lineBreak, e.target);
-    }
+    };
 
     function handleAddIns(e) {
         const lineBreak = document.createElement("br");
@@ -39,12 +39,12 @@ function RecipeForm({ onRecipeSubmit }) {
         const addButton = e.target.parentNode;
         addButton.insertBefore(newInsBox, e.target);
         addButton.insertBefore(lineBreak, e.target);
-    }
+    };
 
     function handleRecipeSubmit(e) {
         e.preventDefault();
         console.log(newRecipe)
-    }
+    };
 
 
     return (
@@ -144,6 +144,6 @@ function RecipeForm({ onRecipeSubmit }) {
             </div>
         </div>
     )
-}
+};
 
 export default RecipeForm

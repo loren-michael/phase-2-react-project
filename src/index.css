@@ -33,3 +33,27 @@ code {
 #recipe-form {
   margin-left: 50px;
 }
+
+.recipe-details {
+  margin-left: 70px;
+}
+
+.center {
+  text-align: center;
+}
+
+.details-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+
+.list {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-width: 1px;
+}

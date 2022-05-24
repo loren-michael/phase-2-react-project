@@ -19,7 +19,7 @@ function RecipeCard({ recipe, onRecDetails }) {
                     <img src={recipe.img} alt={recipe.name} />
                 </div>
                 <div className="content" >
-                    <Link to={`/${recipe.id}`} className="header">{recipe.name}</Link>
+                    <Link to={`/recipes/${recipe.id}`} className="header">{recipe.name}</Link>
                 </div>
                 <div className="content">
                     <span>

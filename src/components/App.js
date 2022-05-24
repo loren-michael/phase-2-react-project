@@ -12,7 +12,7 @@ function App() {
   // const [ingSearch, setIngSearch] = useState("");
   const [mealFilter, setMealFilter] = useState("All");
   const [displayRecipes, setDisplayRecipes] = useState([]);
-  const params = useParams();
+  // const params = useParams();
   // console.log(params)
 
 
@@ -64,7 +64,7 @@ function App() {
         <NavBar /> 
         <Routes>
           <Route path="/recipeform" element={<RecipeForm onRecipeSubmit={onAddRecipe} />} />
-          <Route exact path={`/${params}`} element={<RecipeDetails recId={params} />} />
+          <Route path={"/recipes/:id"} element={<RecipeDetails recipes={recipes} />} />
           <Route 
             exact path="/" 
             element={<Home 
