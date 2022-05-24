@@ -11,7 +11,7 @@
       "preptime": "15",
       "cooktime": "15",
       "servings": "2",
-      "favorite": true,
+      "favorite": false,
       "comments": [
         "From Amanda's trip to Austin, TX.",
         "Sometimes we cook the meat and onion together to save some time",
@@ -113,9 +113,7 @@
         "1/2 tsp. salt",
         "1/2 stick (4 Tbsp.) margarine",
         "3/4 cup soy milk",
-        "1/2 stick (4 Tbsp.) margarine",
         "1/2 cup onion, chopped",
-        "1/2 cup celery, chopped",
         "1/2 cup flour",
         "1/4 tsp. celery salt",
         "1/2 tsp. pepper",

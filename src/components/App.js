@@ -1,6 +1,6 @@
 import '../App.css';
 import React, { useState, useEffect } from "react";
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import NavBar from "./NavBar";
 import Home from "./Home";
 import RecipeForm from "./RecipeForm";
@@ -12,9 +12,6 @@ function App() {
   // const [ingSearch, setIngSearch] = useState("");
   const [mealFilter, setMealFilter] = useState("All");
   const [displayRecipes, setDisplayRecipes] = useState([]);
-  // const params = useParams();
-  // console.log(params)
-
 
 
   useEffect(() => {
@@ -49,9 +46,9 @@ function App() {
     }
   }
 
-  function handleRecDetails(id) {
-    console.log(id)
-  }
+  // function handleRecDetails(id) {
+  //   console.log(id)
+  // }
 
   function onAddRecipe(newRecipe) {
     console.log(newRecipe)
@@ -74,7 +71,7 @@ function App() {
               mealFilter={mealFilter}
               setMealFilter={setMealFilter}
               onFilterChange={handleFilterChange}
-              onRecDetails={handleRecDetails}
+              // onRecDetails={handleRecDetails}
               // setIngSearch={setIngSearch}
               // onIngSearchChange={handleIngSearchChange}
             />} />

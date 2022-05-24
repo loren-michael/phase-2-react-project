@@ -3,19 +3,23 @@ import { useParams } from "react-router-dom";
 
 function RecipeDetails({ recipes }) {
     const [recipe, setRecipe] = useState({});
+    const [ingredients, setIngredients] = useState([]);
+    const [instructions, setInstructions] = useState([]);
     // const [favorite, setFavorite] = useState(recipe.favorite);
     const params = useParams();
-    console.log(params)
-    
-    // const recipe = recipes.find((rec) => rec.id === params.id)
-    // console.log(recipe)
-
+    // const newRecipe = recipes.filter((rec) => rec.id === parseInt(params.id))
 
 
     useEffect(() => {
         const newRecipe = recipes.find((rec) => rec.id === parseInt(params.id));
-        setRecipe(newRecipe)
+        // debugger;
+        const newIng = newRecipe.ingredients;
+        const newInstr = newRecipe.instructions;
+        setRecipe(newRecipe);
+        setIngredients(newIng);
+        setInstructions(newInstr)
     }, [])
+
 
     // function handleFavorite() {
     //     const newFavorite = !favorite;
@@ -34,33 +38,31 @@ function RecipeDetails({ recipes }) {
     //     // .then(console.log(recipe.favorite))
     // };
 
-    // const renderRecipe = () => {
-    //     fetch(`http://localhost:3000/recipes/${recId}`)
-    //     .then(r => r.json())
-    //     .then(recipe => console.log(recipe))
-    // }
 
     return (
         <div className="recipe-details" >
             <img src={recipe.img} alt={recipe.name} className="details-image" />
             <h2 className="center" >{recipe.name}</h2>
             <p className="center" >By {recipe.author}</p>
+            {/* <p className="center" onClick={handleFavorite} >{recipe.favorite ? <p>❤️</p> : <p>🖤</p>}</p> */}
             <div className="list" >
                 <ul>
                     <h3>Ingredients:</h3>
-                    {recipe.ingredients.map((ing) => {
+                    {ingredients.map((ing) => {
                         return <li key={ing}>{ing}</li>
                     })}
-                <br></br>
+                    <br></br>
                 </ul>
             <br></br>                
             </div>
             <div className="list" >
-                <h3>Instructions:</h3>
-                {recipe.instructions.map((inst) => {
-                    return <li key={inst}>{inst}</li>
-                })}
-                <br></br>
+                <ul>
+                    <h3>Instructions:</h3>
+                    {instructions.map((inst) => {
+                        return <li key={inst}>{inst}</li>
+                    })}
+                    <br></br>
+                </ul>
             </div>
         </div>
     )
