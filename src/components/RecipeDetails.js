@@ -7,7 +7,6 @@ function RecipeDetails({ recipes }) {
     const [instructions, setInstructions] = useState([]);
     // const [favorite, setFavorite] = useState(recipe.favorite);
     const params = useParams();
-    // const newRecipe = recipes.filter((rec) => rec.id === parseInt(params.id))
 
 
     useEffect(() => {
