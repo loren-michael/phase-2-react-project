@@ -19,18 +19,11 @@ function RecipeForm({ onRecipeSubmit }) {
         comments: commArr,
     });
 
-    function handleChange(e) {
-        setNewRecipe({...newRecipe, [e.target.name]: e.target.value});
-        console.log(newRecipe)
-    };
-
     function handleArrayChange(e) {
         const comment = [];
         comment.push(e.target.value)
         setCommArr(comment)
         setNewRecipe({...newRecipe, comments: comment})
-        console.log(commArr)
-        console.log(newRecipe)
     }
 
     function handleAddIng(e) {
@@ -56,20 +49,30 @@ function RecipeForm({ onRecipeSubmit }) {
     function handleRecipeSubmit(e) {
         e.preventDefault();
         const ingElements = document.getElementsByClassName("add-ingredient");
+        // let ingArray = [];
         for (let i = 0; i < ingElements.length; i++) {
             if (ingElements[i].value !== "") {
                 const newIng = ingElements[i].value;
                 setIngArr([...ingArr, newIng])
-                setNewRecipe({...newRecipe, ingredients: newIng})
-            }
-        }
+            };
+        };
+        console.log("ing", ingArr)
+        debugger;
+        // setNewRecipe({...newRecipe, ingredients: ingArray})
+
         const instElements = document.getElementsByClassName("add-instruction");
+        // let instrArray = [];
         for (let i = 0; i < instElements.length; i++) {
             if (instElements[i].value !== "") {
                 const newInst = instElements[i].value;
-                setInstArr([...instArr, newInst])
-            }
-        }
+                setInstArr([...instArr, newInst]);
+            };
+        };
+        console.log("inst", instArr)
+        debugger;
+        // setNewRecipe({...newRecipe, instructions: instrArray});
+        // console.log(newRecipe)
+
         const initComm = document.getElementsByClassName("init-comm");
         if (initComm.value !== "") {
             const newComm = [];
@@ -77,9 +80,12 @@ function RecipeForm({ onRecipeSubmit }) {
             setCommArr([...commArr, newComm]);
         }
 
-        console.log(ingArr, instArr, commArr)
+        // console.log("ing arr", ingArr, "inst arr",  instArr, "comm arr", commArr)
+        // console.log(newRecipe)
+        // setNewRecipe({...newRecipe, ingredients: ingArray})
+        // setNewRecipe({...newRecipe, instructions: instrArray})
         console.log(newRecipe)
-
+        debugger;
     };
 
 
@@ -91,7 +97,7 @@ function RecipeForm({ onRecipeSubmit }) {
                     name="name"
                     placeholder="recipe name" 
                     value={newRecipe.name} 
-                    onChange={handleChange}
+                    onChange={e => setNewRecipe({...newRecipe, name: e.target.value})}
                 />
             </div>
             <div id="add-image" >
@@ -100,7 +106,7 @@ function RecipeForm({ onRecipeSubmit }) {
                     placeholder="image URL"
                     name="img"
                     value={newRecipe.img}
-                    onChange={handleChange}
+                    onChange={e => setNewRecipe({...newRecipe, img: e.target.value})}
                 />
             </div>
             <div id="add-author" >
@@ -109,7 +115,7 @@ function RecipeForm({ onRecipeSubmit }) {
                     placeholder="author's name"
                     name="author" 
                     value={newRecipe.author}
-                    onChange={handleChange}
+                    onChange={e => setNewRecipe({...newRecipe, author: e.target.value})}
                 />
             </div>
             <div id="add-source" >
@@ -118,12 +124,12 @@ function RecipeForm({ onRecipeSubmit }) {
                     placeholder="link to original recipe"
                     name="source" 
                     value={newRecipe.source}
-                    onChange={handleChange}
+                    onChange={e => setNewRecipe({...newRecipe, source: e.target.value})}
                 />
             </div>
             <div id="add-mealtype" >
                 <label>Meal Type:  </label>
-                <select name="mealtype" value={newRecipe.mealtype} onChange={handleChange} >
+                <select name="mealtype" value={newRecipe.mealtype} onChange={e => setNewRecipe({...newRecipe, mealtype: e.target.value})} >
                     <option></option>
                     <option>Dinner</option>
                     <option>Lunch</option>
@@ -137,7 +143,7 @@ function RecipeForm({ onRecipeSubmit }) {
                     placeholder="prep time"
                     name="preptime"
                     value={newRecipe.preptime}
-                    onChange={handleChange} 
+                    onChange={e => setNewRecipe({...newRecipe, preptime: e.target.value})} 
                 />
             </div>
             <div id="add-cooktime" >
@@ -146,7 +152,7 @@ function RecipeForm({ onRecipeSubmit }) {
                     placeholder="cook time"
                     name="cooktime"
                     value={newRecipe.cooktime}
-                    onChange={handleChange} 
+                    onChange={e => setNewRecipe({...newRecipe, cooktime: e.target.value})} 
                 />
             </div>
             <div id="add-servings" >
@@ -155,7 +161,7 @@ function RecipeForm({ onRecipeSubmit }) {
                     placeholder="number of servings"
                     name="servings"
                     value={newRecipe.servings}
-                    onChange={handleChange} 
+                    onChange={e => setNewRecipe({...newRecipe, servings: e.target.value})} 
                 />
             </div>
             <div id="add-ingredient" >
