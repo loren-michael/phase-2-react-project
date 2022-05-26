@@ -26,7 +26,7 @@ function RecipeCard({ recipe, onRecDetails }) {
                         {recipe.mealtype}
                     </span>
                     <span className="right floated" >
-                        {recipe.favorite ? <p>❤️</p> : <p>🖤</p>}
+                        {/* {recipe.favorite ? <p>❤️</p> : <p>🖤</p>} */}
                     </span>
                 </div>
             </Card>
