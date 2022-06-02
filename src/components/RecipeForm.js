@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Ingredient from "./Ingredient";
-import Instruction from "./Instruction";
 
 function RecipeForm({ onRecipeSubmit }) {
     const [numIng, setNumIng] = useState([0, 1, 2, 3, 4]);
