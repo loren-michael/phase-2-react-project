@@ -39,12 +39,15 @@ function RecipeForm() {
         setNewRecipe({...newRecipe, instructions: newInstArr});
     }
 
+    function handleAddIng() {
+        const newNum = numIng.length;
+        setNumIng([...numIng, newNum], () => {});
+    };
 
-
-
-
-
-
+    function handleAddInst() {
+        const newNum = numInst.length;
+        setNumInst([...numInst, newNum], () => {})
+    };
 
     // function handleIngredientInputs(arr) {
     //     console.log(arr)
@@ -61,18 +64,6 @@ function RecipeForm() {
         setNewRecipe({...newRecipe, comments: comment})
     };
 
-    function handleAddIng() {
-        const newNum = numIng.length;
-        setNumIng([...numIng, newNum], () => {});
-    };
-
-    function handleAddInst() {
-        const newNum = numInst.length;
-        setNumInst([...numInst, newNum], () => {})
-    };
-
-
-
     function submitRecipe() {
         fetch(`http://localhost:3000/recipes`, {
             method: "POST",
@@ -83,7 +74,6 @@ function RecipeForm() {
         },
         )
     }
-
 
 
     return (
