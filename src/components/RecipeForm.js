@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Ingredient from "./Ingredient";
+import Instruction from "./Instruction";
 
 function RecipeForm({ onRecipeSubmit }) {
-    const [instArr, setInstArr] = useState([]);
-    const [ingArr, setIngArr] = useState([]);
+    const [numIng, setNumIng] = useState([0, 1, 2, 3, 4]);
+    const [numInst, setNumInst] = useState([0, 1, 2, 3, 4]);
     const [commArr, setCommArr] = useState([]);
     const [newRecipe, setNewRecipe] = useState({
         img: "",
@@ -14,80 +16,66 @@ function RecipeForm({ onRecipeSubmit }) {
         preptime: "",
         cooktime: "",
         servings: "",
-        instructions: instArr,
-        ingredients: ingArr,
-        comments: commArr,
+        ingredients: [],
+        instructions: [],
+        comments: commArr
     });
+
+    useEffect(() => {handleIngredientInputs(numIng)}, [numIng]);
+
+    useEffect(() => {handleInstructionInputs(numInst)}, [numInst]);
+
+    function handleIngredientInputs(arr) {
+        console.log(arr)
+    };
+
+    function handleInstructionInputs(arr) {
+        console.log(arr)
+    };
 
     function handleArrayChange(e) {
         const comment = [];
         comment.push(e.target.value)
         setCommArr(comment)
         setNewRecipe({...newRecipe, comments: comment})
+    };
+
+    function handleAddIng() {
+        const newNum = numIng.length;
+        setNumIng([...numIng, newNum], () => {});
+    };
+
+    function handleAddInst() {
+        const newNum = numInst.length;
+        setNumInst([...numInst, newNum], () => {})
+    };
+
+    function handleIngredients() {
+        const ingElements = document.getElementsByClassName("add-ingredient");
+        const convIng = [...ingElements];
+        const newIngArr = convIng.filter((ing) => ing.value.length > 0).map((ing) => ing.value)
+        console.log(newIngArr);
+        setNewRecipe({...newRecipe, ingredients: newIngArr});
     }
 
-    function handleAddIng(e) {
-        const lineBreak = document.createElement("br");
-        const newIngBox = document.createElement("input");
-        newIngBox.className = "add-ingredient";
-        newIngBox.name = "add-ingredient";
-        const addButton = e.target.parentNode;
-        addButton.insertBefore(newIngBox, e.target);
-        addButton.insertBefore(lineBreak, e.target);
-    };
-
-    function handleAddIns(e) {
-        const lineBreak = document.createElement("br");
-        const newInsBox = document.createElement("input");
-        newInsBox.className = "add-instruction";
-        newInsBox.name = "add-instructions";
-        const addButton = e.target.parentNode;
-        addButton.insertBefore(newInsBox, e.target);
-        addButton.insertBefore(lineBreak, e.target);
-    };
-
-    function handleRecipeSubmit(e) {
-        e.preventDefault();
-        const ingElements = document.getElementsByClassName("add-ingredient");
-        // let ingArray = [];
-        for (let i = 0; i < ingElements.length; i++) {
-            if (ingElements[i].value !== "") {
-                const newIng = ingElements[i].value;
-                setIngArr([...ingArr, newIng])
-            };
-        };
-        console.log("ing", ingArr)
-        debugger;
-        // setNewRecipe({...newRecipe, ingredients: ingArray})
-
+    function handleInstructions() {
         const instElements = document.getElementsByClassName("add-instruction");
-        // let instrArray = [];
-        for (let i = 0; i < instElements.length; i++) {
-            if (instElements[i].value !== "") {
-                const newInst = instElements[i].value;
-                setInstArr([...instArr, newInst]);
-            };
-        };
-        console.log("inst", instArr)
-        debugger;
-        // setNewRecipe({...newRecipe, instructions: instrArray});
-        // console.log(newRecipe)
+        const convInst = [...instElements];
+        const newInstArr = convInst.filter((inst) => inst.value.length > 0).map((ing) => ing.value);
+        console.log(newInstArr);
+        setNewRecipe({...newRecipe, instructions: newInstArr});
+    }
 
-        const initComm = document.getElementsByClassName("init-comm");
-        if (initComm.value !== "") {
-            const newComm = [];
-            newComm.push(initComm.value);
-            setCommArr([...commArr, newComm]);
-        }
-
-        // console.log("ing arr", ingArr, "inst arr",  instArr, "comm arr", commArr)
-        // console.log(newRecipe)
-        // setNewRecipe({...newRecipe, ingredients: ingArray})
-        // setNewRecipe({...newRecipe, instructions: instrArray})
-        console.log(newRecipe)
-        debugger;
-    };
-
+    function submitRecipe() {
+        fetch(`http://localhost:3000/recipes`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newRecipe)
+        },
+        )
+    }
 
     return (
         <div id="recipe-form" >
@@ -164,18 +152,35 @@ function RecipeForm({ onRecipeSubmit }) {
                     onChange={e => setNewRecipe({...newRecipe, servings: e.target.value})} 
                 />
             </div>
-            <div id="add-ingredient" >
+            <br></br>
+            <div id="ingredients" >
                 <label>Ingredients:  </label>
-                <input type="text" className="add-ingredient" />
+                <br></br>
+                {numIng.map((num) => {
+                    return (
+                        <div>
+                            <input type="text" key={num} className="add-ingredient" onChange={handleIngredients}></input>
+                        </div>
+                    )
+                })}
                 <br></br>
                 <button type="button" id="btn-add-ingredient" onClick={handleAddIng} > Add Ingredient </button>
             </div>
-            <div id="add-instructions" >
+            <br></br>
+            <div id="instructions" >
                 <label>Instructions:  </label>
-                <input type="text" className="add-instruction" />
                 <br></br>
-                <button type="button" id="btn-add-instructions" onClick={handleAddIns} > Add Instruction </button>
+                {numInst.map((num) => {
+                    return (
+                        <div>
+                            <input type="text" key={num} className="add-instruction" onChange={handleInstructions}></input>
+                        </div>
+                    )
+                })}
+                <br></br>
+                <button type="button" id="btn-add-instructions" onClick={handleAddInst} > Add Instruction </button>
             </div>
+            <br></br>
             <div id="init-comm" >
                 <label>Comment:  </label>
                 <input 
@@ -183,12 +188,12 @@ function RecipeForm({ onRecipeSubmit }) {
                     // name="init-comm"
                     // value={newRecipe.comments}
                     onChange={handleArrayChange}
-                    placeholder="leave a note"
+                    placeholder="leave a comment"
                 />
             </div>
             <br></br>
             <div>
-                <button type="submit" onClick={handleRecipeSubmit} > Submit this recipe! </button>
+                {/* <button type="submit" onClick={submitRecipe} > Submit this recipe! </button> */}
             </div>
         </div>
     )
