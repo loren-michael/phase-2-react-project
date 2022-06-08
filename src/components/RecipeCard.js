@@ -14,19 +14,19 @@ function RecipeCard({ recipe, onRecDetails }) {
 
 
     return (
-            <Card>
-                <div className="image" >
+            <Card >
+                <Link className="image" to={`/recipes/${recipe.id}`} >
                     <img src={recipe.img} alt={recipe.name} />
-                </div>
+                </Link>
                 <div className="content" >
                     <Link to={`/recipes/${recipe.id}`} className="header">{recipe.name}</Link>
                 </div>
-                <div className="content">
+                <div className="content" >
                     <span>
                         {recipe.mealtype}
                     </span>
                     <span className="right floated" >
-                        {/* {recipe.favorite ? <p>❤️</p> : <p>🖤</p>} */}
+                        {recipe.favorite ? <p>❤️</p> : <p>🖤</p>}
                     </span>
                 </div>
             </Card>
