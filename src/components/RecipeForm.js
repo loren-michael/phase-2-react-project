@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function RecipeForm() {
     const [numIng, setNumIng] = useState([0, 1, 2, 3, 4]);
     const [numInst, setNumInst] = useState([0, 1, 2, 3, 4]);
     const [commArr, setCommArr] = useState([]);
+    const navigate = useNavigate();
     const [newRecipe, setNewRecipe] = useState({
         img: "",
         video: "",
@@ -71,8 +73,9 @@ function RecipeForm() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(newRecipe)
-        },
-        )
+        })
+        .then(navigate("/"))
+        .then(window.location.reload())
     }
 
 
