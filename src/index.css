@@ -42,6 +42,11 @@ code {
   text-align: center;
 }
 
+.btn-center {
+  display: block;
+  margin: auto;
+}
+
 .details-image {
   display: block;
   margin-left: auto;

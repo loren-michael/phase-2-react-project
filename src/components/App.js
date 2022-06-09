@@ -21,7 +21,7 @@ function App() {
       setRecipes(recipes);
       setDisplayRecipes(recipes)
     });
-  }, [])
+  }, [recipes])
 
   const searchFilter = recipes.filter((rec) => rec.name.toLowerCase().includes(search.toLowerCase()))
 
@@ -46,22 +46,15 @@ function App() {
     }
   }
 
-  // function handleRecDetails(id) {
-  //   console.log(id)
-  // }
 
-  function onAddRecipe(newRecipe) {
-    console.log(newRecipe)
-    // setRecipes([...recipes, newRecipe])
-  }
 
 
   return (
     <div>
         <NavBar /> 
         <Routes>
-          <Route path="/recipeform" element={<RecipeForm onRecipeSubmit={onAddRecipe} />} />
-          <Route path={"/recipes/:id"} element={<RecipeDetails recipes={recipes} />} />
+          <Route path="/recipeform" element={<RecipeForm />} />
+          <Route path={"/recipes/:id"} element={<RecipeDetails recipes={recipes} setRecipes={setRecipes} />} />
           <Route 
             exact path="/" 
             element={<Home 
