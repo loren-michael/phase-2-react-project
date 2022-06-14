@@ -11,12 +11,11 @@
       "preptime": "15",
       "cooktime": "15",
       "servings": "2",
-      "favorite": false,
+      "favorite": true,
       "comments": [
         "From Amanda's trip to Austin, TX.",
         "Sometimes we cook the meat and onion together to save some time",
-        "Love this recipe!",
-        "test"
+        "Love this recipe!"
       ],
       "instructions": [
         "Start with frying frozen hash browns in a hot skillet. Season with garlic powder, onion powder, salt and pepper. Flip when brown and crispy.",
@@ -56,10 +55,7 @@
       "servings": "12",
       "favorite": false,
       "comments": [
-        "Switch the baking soda and baking powder amounts for a better cookie!",
-        "Freeze dough in portions on a cookie sheet and package together once frozen.",
-        "Undercook the cookie for best results.",
-        "These cookies are GREAT!"
+        "test"
       ],
       "instructions": [
         "Line a large baking sheet with a silicon mat or parchment paper. Set aside.",
@@ -99,10 +95,7 @@
       "cooktime": "40",
       "servings": "8",
       "favorite": true,
-      "comments": [
-        "Use gardein chicken scallopini for the chicken.",
-        "Bisquick dumplings are great with this!"
-      ],
+      "comments": [],
       "instructions": [
         "Combine the dry ingredients for the dumplings in a bowl. Mix the margarine with the dry mixture until crumbly. Add the soy milk, stirring until moistened. Add more soy milk, as needed, if the mixture is too dry. Knead the dough for 30 seconds on a well-floured surface, then roll to 1/8-inch thickness and cut into 1/2-inch squares.",
         "Sauté the margarine, onion, and celery for the soup in a large saucepan until the vegetables are soft. Add the flour, salt, and pepper to make a thick paste. Slowly mix in the broth and bring to a boil. Add the carrots, Chickettes, and bay leaf.",
@@ -815,10 +808,30 @@
       "servings": "6",
       "favorite": true,
       "instructions": [
-        "Make a garlic-lemon butter. Mince and mash the garlic and 1/2 teaspoon of the salt together to make a paste. Transfer to a small bowl, add 4 tablespoons of the butter and the lemon zest, and mash together until combined; set aside."
+        "Make a garlic-lemon butter. Mince and mash the garlic and 1/2 teaspoon of the salt together to make a paste. Transfer to a small bowl, add 4 tablespoons of the butter and the lemon zest, and mash together until combined; set aside.",
+        "Sauté the shallot in butter. Melt the remaining 2 tablespoons butter in a large Dutch oven or pot over medium-high heat. Add the shallot and sauté until softened and beginning to brown, 2 to 3 minutes.",
+        "Cook the pasta. Add the pasta, hot water, and remaining 2 teaspoons salt. Cover and bring to a boil over high heat. Reduce the heat back to medium-high, uncover, and cook until the pasta is al dente, about 8 minutes. Stir the pasta occasionally, loosening noodles that stick to the bottom or sides of the pot.",
+        "Stir in the vegetables and cook until tender. Add the asparagus, zucchini, carrots, bell pepper, broccolini, sugar snap peas, and peas. Stir and cook uncovered until the vegetables are crisp-tender and the cooking liquid has reduced into a starchy sauce, about 2 minutes.",
+        "Finish with the tomatoes, cheese, and garlic-lemon butter. Stir in the tomatoes, Parmesan cheese, and garlic-lemon butter. Once the cheese and butter is melted, the cooking liquid should be significantly reduced, leaving only a silky, buttery sauce. Serve in bowls garnished with red pepper flakes, basil, and more Parmesan cheese."
       ],
       "ingredients": [
-        "2 cloves garlic, smashed"
+        "2 cloves garlic, smashed",
+        "2 1/2 teaspoons kosher salt, divided",
+        "6 tablespoons unsalted butter, at room temperature, divided",
+        "1 tablespoon finely grated lemon zest (from 1 lemon)",
+        "1 medium shallot, minced",
+        "12 ounces dried short pasta, such as penne rigate, fusilli, or orecchiette",
+        "6 asparagus spears, trimmed and cut into 1-inch pieces on the diagonal",
+        "1 small zucchini, diced",
+        "1 cup julienned carrots (about 3 ounces)",
+        "3/4 cup diced orange or yellow bell pepper",
+        "1 1/4 cups broccolini (about 3 ounces), trimmed and cut into 1-inch pieces",
+        "1/2 cup sugar snap peas, strings removed and halved on the diagonal (about 2 ounces)",
+        "1/2 cup fresh or frozen peas",
+        "10 cherry tomatoes, halved",
+        "3/4 cup grated Parmesan cheese, plus more for serving",
+        "2 tablespoons thinly sliced fresh basil leaves",
+        "Pinch red pepper flakes"
       ],
       "comments": [
         "So good with lots of cheese on top"

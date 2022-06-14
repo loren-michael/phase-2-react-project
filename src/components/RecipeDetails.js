@@ -6,7 +6,7 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
     const [ingredients, setIngredients] = useState([]);
     const [instructions, setInstructions] = useState([]);
     const [comments, setComments] = useState([]);
-    // const [favorite, setFavorite] = useState(recipe.favorite);
+    const [favorite, setFavorite] = useState(recipe.favorite);
     const params = useParams();
 
 
@@ -15,11 +15,11 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
         const newIng = newRecipe.ingredients;
         const newInstr = newRecipe.instructions;
         const newComm = newRecipe.comments;
-        // const initialFavorite = newRecipe.favorite
+        const initialFavorite = newRecipe.favorite;
         setRecipe(newRecipe);
         setIngredients(newIng);
         setInstructions(newInstr);
-        // setFavorite(initialFavorite);
+        setFavorite(initialFavorite);
         setComments(newComm);
     }, [])
 
@@ -39,31 +39,31 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
     }))
     }, [comments])
 
-    // function handleFavorite() {
-    //     const newFavorite = !favorite;
-    //     setFavorite(newFavorite);
-    //     console.log(favorite);
-    //     console.log(recipes)
-    //     fetch(`http://localhost:3000/recipes/${recipe.id}`, {
-    //         method: "PATCH",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify({
-    //             "favorite": favorite
-    //         })
-    //     })
-    //     .then(refreshRecipes())
-    // };
+    useEffect(() => {
+        fetch(`http://localhost:3000/recipes/${recipe.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({"favorite": favorite})
+        })
+        .then(fetch(`http://localhost:3000/recipes`)
+                .then(r => r.json())
+                .then(recipes => {
+                    setRecipes(recipes);
+                    setDisplayRecipes(recipes)
+    }))
+    }, [favorite])
 
-    // function refreshRecipes() {
-    //     fetch(`http://localhost:3000/recipes`)
-    // }
+    function handleFavorite() {
+        const newFavorite = !favorite;
+        setFavorite(newFavorite);
+    };
 
     function handleNewComment() {
         const newComment = document.getElementById("new-comment").value;
         setComments([...comments, newComment]);
-        console.log((recipe.id))
+        document.getElementById("new-comment").value = ''
     }
 
 
@@ -72,7 +72,7 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
             <img src={recipe.img} alt={recipe.name} className="details-image" />
             <h2 className="center" >{recipe.name}</h2>
             <p className="center" >By {recipe.author}</p>
-            <div className="center" >{recipe.favorite ? <div>❤️</div> : <div>🖤</div>}</div>
+            <button className="btn-center" onClick={handleFavorite} >{favorite ? <div>❤️</div> : <div>🖤</div>}</button>
             <div id="list-ing" className="list" >
                 <ul>
                     <h3>Ingredients:</h3>
@@ -99,7 +99,7 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
                     {comments.length > 0 ? comments.map((comment) => {return <li key={comment}>{comment}</li>}) : <p>No comments yet!</p>}
                 </ul>
                 <ul>
-                    <input id="new-comment" type="textarea" placeholder="leave a comment"></input><button type="submit" onClick={handleNewComment} >Submit</button>
+                    <input id="new-comment" type="text" placeholder="leave a comment"></input><button type="submit" onClick={handleNewComment} >Submit</button>
                 </ul>
             </div>
         </div>
