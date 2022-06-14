@@ -53,7 +53,7 @@
       "preptime": "10",
       "cooktime": "15",
       "servings": "12",
-      "favorite": false,
+      "favorite": true,
       "comments": [
         "test"
       ],

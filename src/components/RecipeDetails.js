@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useParams } from "react-router-dom";
 
 function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
@@ -8,6 +8,8 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
     const [comments, setComments] = useState([]);
     const [favorite, setFavorite] = useState(recipe.favorite);
     const params = useParams();
+    const [initialRender, setInitialRender] = useState(true);
+    // console.log(initialRender)
 
 
     useEffect(() => {
@@ -21,9 +23,13 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
         setInstructions(newInstr);
         setFavorite(initialFavorite);
         setComments(newComm);
+        setInitialRender(false)
     }, [])
 
     useEffect(() => {
+        if (initialRender) {
+            console.log("hello from comment update")
+        } else {
         fetch(`http://localhost:3000/recipes/${recipe.id}`, {
             method: "PATCH",
             headers: {
@@ -36,10 +42,13 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
                 .then(recipes => {
                     setRecipes(recipes);
                     setDisplayRecipes(recipes)
-    }))
+    }))}
     }, [comments])
 
     useEffect(() => {
+        if (initialRender) {
+            console.log("hello from favorite update")
+        } else {
         fetch(`http://localhost:3000/recipes/${recipe.id}`, {
             method: "PATCH",
             headers: {
@@ -52,7 +61,7 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
                 .then(recipes => {
                     setRecipes(recipes);
                     setDisplayRecipes(recipes)
-    }))
+    }))}
     }, [favorite])
 
     function handleFavorite() {
