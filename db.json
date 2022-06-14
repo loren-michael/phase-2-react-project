@@ -11,11 +11,12 @@
       "preptime": "15",
       "cooktime": "15",
       "servings": "2",
-      "favorite": true,
+      "favorite": false,
       "comments": [
         "From Amanda's trip to Austin, TX.",
         "Sometimes we cook the meat and onion together to save some time",
-        "Love this recipe!"
+        "Love this recipe!",
+        "test"
       ],
       "instructions": [
         "Start with frying frozen hash browns in a hot skillet. Season with garlic powder, onion powder, salt and pepper. Flip when brown and crispy.",
@@ -97,7 +98,7 @@
       "preptime": "30",
       "cooktime": "40",
       "servings": "8",
-      "favorite": false,
+      "favorite": true,
       "comments": [
         "Use gardein chicken scallopini for the chicken.",
         "Bisquick dumplings are great with this!"
@@ -295,7 +296,7 @@
       "preptime": "60",
       "cooktime": "30",
       "servings": "4",
-      "favorite": false,
+      "favorite": true,
       "comments": [],
       "instructions": [
         "To make the spicy sunflower seeds, preheat the oven to 350°F. Toss the seeds with the other ingredients in a large bowl, until well coated. Spread the coated seeds out on a baking sheet in a thin even layer. Bake for 15 minutes or until well toasted, allow to cool completely before using.",
@@ -364,7 +365,7 @@
       "preptime": "20",
       "cooktime": "75",
       "servings": "6",
-      "favorite": false,
+      "favorite": true,
       "comments": [
         "Tastes great but takes forever!"
       ],
@@ -410,7 +411,7 @@
       "preptime": "20",
       "cooktime": "40",
       "servings": "6",
-      "favorite": false,
+      "favorite": true,
       "comments": [
         "Use this as a base recipe for regular manicotti or stuffed shells"
       ],
@@ -449,7 +450,7 @@
       "preptime": "10",
       "cooktime": "20",
       "servings": "28",
-      "favorite": false,
+      "favorite": true,
       "instructions": [
         "Place all ingredients into bowl + mix except egg whites",
         "Mix (whip) egg whites in separate bowl",
@@ -479,7 +480,7 @@
       "preptime": "10",
       "cooktime": "25",
       "servings": "4",
-      "favorite": false,
+      "favorite": true,
       "instructions": [
         "Bring cider, butter, brown sugar, vanilla, and cinnamon to a boil over medium-high heat in a large saucepan. Reduce heat and boil gently, whisking occasionally, until thick and syrupy, 30–45 minutes.",
         "Preheat oven to 425°. Whisk eggs, milk, flour, vanilla, salt, and ½ tsp. cinnamon in a medium bowl until smooth.",
@@ -518,7 +519,7 @@
       "preptime": "5",
       "cooktime": "25",
       "servings": "4",
-      "favorite": false,
+      "favorite": true,
       "instructions": [
         "In a large skillet, saute the onion and bell peppers in olive oil for 3 to 5 minutes or until onions are soft.",
         "Reduce heat to medium-low and add the vegetable broth and tomato sauce, stirring to combine well. Once the broth and tomato sauce is combined and hot, add the chili powder, soy sauce, hot sauce or Tabasco sauce, sugar, and TVP, stirring well to combine.",
@@ -549,7 +550,7 @@
       "preptime": "15",
       "cooktime": "15",
       "servings": "4",
-      "favorite": false,
+      "favorite": true,
       "instructions": [
         "Heat 2 Tbsp. oil in a small skillet over medium. Cook garlic, swirling in pan often, until golden and crisp, about 2 minutes. Transfer garlic to a small bowl with a slotted spoon.",
         "Add panko to same skillet and cook, stirring often, until golden, about 5 minutes; season with salt and pepper. Transfer to bowl with garlic.",
@@ -588,7 +589,7 @@
       "preptime": "20",
       "cooktime": "45",
       "servings": "4",
-      "favorite": false,
+      "favorite": true,
       "instructions": [
         "Pour farro into a medium saucepan of boiling salted water, reduce heat, and simmer, stirring occasionally, until tender, 25–30 minutes. Drain farro and spread out on a rimmed baking sheet; let cool.",
         "Meanwhile, using a slotted spoon, carefully lower eggs into a small saucepan of boiling water and cook 6½ minutes for an oozy, jammy yolk or 7 minutes for a slightly firmer middle. Transfer eggs to a bowl of ice water with slotted spoon and let sit until cool enough to handle, about 2 minutes. Remove eggs from ice water; peel and slice in half lengthwise.",
@@ -663,7 +664,7 @@
       "preptime": "10 mins",
       "cooktime": "30 mins",
       "servings": "6",
-      "favorite": false,
+      "favorite": true,
       "instructions": [
         "Cook your pasta according to package directions. Drain and let cool. ",
         "Make the dressing. Add all the dressing ingredients to a blender. Blend until smooth, taste and adjust seasoning. ",

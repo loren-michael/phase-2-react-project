@@ -21,7 +21,7 @@ function App() {
       setRecipes(recipes);
       setDisplayRecipes(recipes)
     });
-  }, [recipes])
+  }, [])
 
   const searchFilter = recipes.filter((rec) => rec.name.toLowerCase().includes(search.toLowerCase()))
 
@@ -54,7 +54,14 @@ function App() {
         <NavBar /> 
         <Routes>
           <Route path="/recipeform" element={<RecipeForm />} />
-          <Route path={"/recipes/:id"} element={<RecipeDetails recipes={recipes} setRecipes={setRecipes} />} />
+          <Route 
+            path={"/recipes/:id"} 
+            element={<RecipeDetails 
+                        recipes={recipes} 
+                        setRecipes={setRecipes}
+                        setDisplayRecipes={setDisplayRecipes}
+                      />}
+          />
           <Route 
             exact path="/" 
             element={<Home 

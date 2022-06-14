@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 
-function RecipeDetails({ recipes, setRecipes }) {
+function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
     const [recipe, setRecipe] = useState({});
     const [ingredients, setIngredients] = useState([]);
     const [instructions, setInstructions] = useState([]);
     const [comments, setComments] = useState([]);
-    const [favorite, setFavorite] = useState(recipe.favorite);
+    // const [favorite, setFavorite] = useState(recipe.favorite);
     const params = useParams();
 
 
@@ -15,32 +15,55 @@ function RecipeDetails({ recipes, setRecipes }) {
         const newIng = newRecipe.ingredients;
         const newInstr = newRecipe.instructions;
         const newComm = newRecipe.comments;
-        const initialFavorite = newRecipe.favorite
+        // const initialFavorite = newRecipe.favorite
         setRecipe(newRecipe);
         setIngredients(newIng);
         setInstructions(newInstr);
-        setFavorite(initialFavorite);
+        // setFavorite(initialFavorite);
         setComments(newComm);
     }, [])
 
-    function handleFavorite() {
-        const newFavorite = !favorite;
-        setFavorite(newFavorite);
-        console.log(favorite);
-        console.log(recipes)
+    useEffect(() => {
         fetch(`http://localhost:3000/recipes/${recipe.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                "favorite": favorite
-            })
+            body: JSON.stringify({"comments": comments})
         })
-    };
+        .then(fetch(`http://localhost:3000/recipes`)
+                .then(r => r.json())
+                .then(recipes => {
+                    setRecipes(recipes);
+                    setDisplayRecipes(recipes)
+    }))
+    }, [comments])
 
-    function handleNewComment(e) {
-        console.log(e.target.value)
+    // function handleFavorite() {
+    //     const newFavorite = !favorite;
+    //     setFavorite(newFavorite);
+    //     console.log(favorite);
+    //     console.log(recipes)
+    //     fetch(`http://localhost:3000/recipes/${recipe.id}`, {
+    //         method: "PATCH",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             "favorite": favorite
+    //         })
+    //     })
+    //     .then(refreshRecipes())
+    // };
+
+    // function refreshRecipes() {
+    //     fetch(`http://localhost:3000/recipes`)
+    // }
+
+    function handleNewComment() {
+        const newComment = document.getElementById("new-comment").value;
+        setComments([...comments, newComment]);
+        console.log((recipe.id))
     }
 
 
@@ -49,7 +72,7 @@ function RecipeDetails({ recipes, setRecipes }) {
             <img src={recipe.img} alt={recipe.name} className="details-image" />
             <h2 className="center" >{recipe.name}</h2>
             <p className="center" >By {recipe.author}</p>
-            <button className="btn-center" onClick={handleFavorite} >{favorite ? <div>❤️</div> : <div>🖤</div>}</button>
+            <div className="center" >{recipe.favorite ? <div>❤️</div> : <div>🖤</div>}</div>
             <div id="list-ing" className="list" >
                 <ul>
                     <h3>Ingredients:</h3>
