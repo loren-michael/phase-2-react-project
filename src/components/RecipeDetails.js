@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
+import Ingredients from "./Ingredients"
+import Instructions from "./Instructions"
 
 function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
     const [recipe, setRecipe] = useState({});
@@ -66,7 +68,7 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
         setFavorite(function (favorite) {
             const newFavorite = !favorite;
             return newFavorite;
-        })
+        });
     }
 
 
@@ -86,9 +88,7 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
             <div id="list-ing" className="list" >
                 <ul>
                     <h3>Ingredients:</h3>
-                    {ingredients.map((ing) => {
-                        return <li key={ing}>{ing}</li>
-                    })}
+                    <Ingredients ingredients={ingredients} />
                     <br></br>
                 </ul>
             <br></br>                
@@ -96,9 +96,7 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
             <div id="list-instr" className="list" >
                 <ul>
                     <h3>Instructions:</h3>
-                    {instructions.map((inst) => {
-                        return <li key={inst}>{inst}</li>
-                    })}
+                    <Instructions instructions={instructions}/>
                     <br></br>
                 </ul>
             </div>
