@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 
 function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
@@ -9,7 +9,6 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
     const [favorite, setFavorite] = useState(recipe.favorite);
     const params = useParams();
     const [initialRender, setInitialRender] = useState(true);
-    // console.log(initialRender)
 
 
     useEffect(() => {
@@ -26,29 +25,9 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
         setInitialRender(false)
     }, [])
 
-    useEffect(() => {
-        if (initialRender) {
-            console.log("hello from comment update")
-        } else {
-        fetch(`http://localhost:3000/recipes/${recipe.id}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({"comments": comments})
-        })
-        .then(fetch(`http://localhost:3000/recipes`)
-                .then(r => r.json())
-                .then(recipes => {
-                    setRecipes(recipes);
-                    setDisplayRecipes(recipes)
-    }))}
-    }, [comments])
 
     useEffect(() => {
-        if (initialRender) {
-            console.log("hello from favorite update")
-        } else {
+        if (initialRender === false) {
         fetch(`http://localhost:3000/recipes/${recipe.id}`, {
             method: "PATCH",
             headers: {
@@ -64,10 +43,32 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
     }))}
     }, [favorite])
 
+
+    useEffect(() => {
+        if (initialRender === false) {
+        fetch(`http://localhost:3000/recipes/${recipe.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({"comments": comments})
+        })
+        .then(fetch(`http://localhost:3000/recipes`)
+                .then(r => r.json())
+                .then(recipes => {
+                    setRecipes(recipes);
+                    setDisplayRecipes(recipes)
+    }))}
+    }, [comments])
+
+
     function handleFavorite() {
-        const newFavorite = !favorite;
-        setFavorite(newFavorite);
-    };
+        setFavorite(function (favorite) {
+            const newFavorite = !favorite;
+            return newFavorite;
+        })
+    }
+
 
     function handleNewComment() {
         const newComment = document.getElementById("new-comment").value;
@@ -86,7 +87,7 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
                 <ul>
                     <h3>Ingredients:</h3>
                     {ingredients.map((ing) => {
-                        return <li key={ing.index}>{ing}</li>
+                        return <li key={ing}>{ing}</li>
                     })}
                     <br></br>
                 </ul>
@@ -96,7 +97,7 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
                 <ul>
                     <h3>Instructions:</h3>
                     {instructions.map((inst) => {
-                        return <li key={inst.index}>{inst}</li>
+                        return <li key={inst}>{inst}</li>
                     })}
                     <br></br>
                 </ul>
