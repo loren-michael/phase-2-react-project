@@ -19,6 +19,8 @@ Then, to start up the app, type into your terminal: npm start
 
 Your browser should open to the Recipe Manager with recipe cards displayed for you to interact with.
 
+Once running, you can filter recipes either filter by selecting a meal type from a drop-down menu, search for a recipe using the text box, or click on a recipe card's image or title to see the details of that recipe. You can also go to the Add Recipe form to input a new recipe that will then be displayed when returned to the home page.
+
 
 # Functionality
 
