@@ -2,7 +2,7 @@
 
 # Project Description
 
-I built this project to make it easier to find and organize recipes to assist with meal planning. By building my own database of recipes I have limited the database to only the recipes I like, and can customize the information that is provided. I am able to filter by meal type and also search for recipes by name. 
+I built this project to make it easier to find and organize recipes to assist with meal planning. By building my own database of recipes I have limited the database to only the recipes I like, and can customize the information that is provided. I am able to filter by meal type, search for recipes by name, and mark recipes I like as "favorite".
 
 
 # How To Run
@@ -17,13 +17,18 @@ If you need to install the json server, please install by typing this into your 
 
 Then, to start up the app, type into your terminal: npm start
 
-Your browser should open to the Recipe Manager with a list of recipes there for you to interact with.
+Your browser should open to the Recipe Manager with recipe cards displayed for you to interact with.
 
 
 # Functionality
 
-At its current iteration, the functionality of this project is limited yet powerful. The Recipe Manager has ways for you to Add A Recipe using a detailed form, filter the list of recipes by the type of meal (dinner, lunch, breakfast), search through the recipes, and add comments to each of the recipes so you can keep track of any notes you have.
+At its current iteration, the functionality of this project is limited yet powerful. Here are some of the features included:
+   - Search through recipes to find the recipe you're looking for.
+   - Filter recipes by meal type (breakfast, lunch, dinner, etc.)
+   - Add comments to a recipe to keep track of your notes.
+   - Set recipes as "favorite"
+   - Add recipes using a detailed controlled form, including functionality to add as many lines for ingredients and instructions as you may need.
 
 # Future Plans
 
-In the future I would like to add functionality that allows the user to filter recipes by ingredient.
+In the future I would like to add functionality that allows the user to filter recipes using an ingredient search.
