@@ -4,6 +4,8 @@
 
 I built this project to make it easier to find and organize recipes to assist with meal planning. By building my own database of recipes I have limited the database to only the recipes I like, and can customize the information that is provided. I am able to filter by meal type, search for recipes by name, and mark recipes I like as "favorite".
 
+You can read more about the process I took to build this app at the following blog post: https://dev.to/lorenmichael/recipe-manager-20-react-52c4
+
 
 # How To Run
 
