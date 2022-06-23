@@ -5,13 +5,6 @@ import { Card } from "semantic-ui-react";
 
 function RecipeCard({ recipe, onRecDetails }) {
 
-    // function handleClick(e) {
-    //     // this function will bring us to a details page
-    //     console.log(recipe.id);
-    //     onRecDetails(e.target.id);
-    //     <Link to={`/${recipe.id}`} />
-    // };
-
 
     return (
             <Card >

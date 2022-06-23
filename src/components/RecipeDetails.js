@@ -30,36 +30,36 @@ function RecipeDetails({ recipes, setRecipes, setDisplayRecipes }) {
 
     useEffect(() => {
         if (initialRender === false) {
-        fetch(`http://localhost:3000/recipes/${recipe.id}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({"favorite": favorite})
-        })
-        .then(fetch(`http://localhost:3000/recipes`)
-                .then(r => r.json())
-                .then(recipes => {
-                    setRecipes(recipes);
-                    setDisplayRecipes(recipes)
-    }))}
+            fetch(`http://localhost:3000/recipes/${recipe.id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({"favorite": favorite})
+            })
+            .then(fetch(`http://localhost:3000/recipes`)
+                    .then(r => r.json())
+                    .then(recipes => {
+                        setRecipes(recipes);
+                        setDisplayRecipes(recipes)
+        }))}
     }, [favorite])
 
 
     useEffect(() => {
         if (initialRender === false) {
-        fetch(`http://localhost:3000/recipes/${recipe.id}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({"comments": comments})
-        })
-        .then(fetch(`http://localhost:3000/recipes`)
-                .then(r => r.json())
-                .then(recipes => {
-                    setRecipes(recipes);
-                    setDisplayRecipes(recipes)
+            fetch(`http://localhost:3000/recipes/${recipe.id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({"comments": comments})
+            })
+            .then(fetch(`http://localhost:3000/recipes`)
+                    .then(r => r.json())
+                    .then(recipes => {
+                        setRecipes(recipes);
+                        setDisplayRecipes(recipes)
     }))}
     }, [comments])
 

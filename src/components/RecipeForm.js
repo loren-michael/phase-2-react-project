@@ -21,9 +21,6 @@ function RecipeForm() {
         comments: commArr
     });
 
-    // useEffect(() => {handleIngredientInputs(numIng)}, [numIng]);
-
-    // useEffect(() => {handleInstructionInputs(numInst)}, [numInst]);
 
     function handleIngredients() {
         const ingElements = document.getElementsByClassName("add-ingredient");
@@ -50,14 +47,6 @@ function RecipeForm() {
         const newNum = numInst.length;
         setNumInst([...numInst, newNum], () => {})
     };
-
-    // function handleIngredientInputs(arr) {
-    //     console.log(arr)
-    // };
-
-    // function handleInstructionInputs(arr) {
-    //     console.log(arr)
-    // };
 
     function handleArrayChange(e) {
         const comment = [];

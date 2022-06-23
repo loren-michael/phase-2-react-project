@@ -6,9 +6,19 @@ import RecipeContainer from "./RecipeContainer";
 function Home({ recipes, setSearch, onSearchChange, mealFilter, setMealFilter, onFilterChange, onRecDetails }) {
     return (
         <div>
-            <Search setSearch={setSearch} onSearchChange={onSearchChange} />
-            <Filter mealFilter={mealFilter} setMealFilter={setMealFilter} onFilterChange={onFilterChange} />
-            <RecipeContainer recipes={recipes} onRecDetails={onRecDetails} />
+            <Search 
+                setSearch={setSearch}
+                onSearchChange={onSearchChange} 
+            />
+            <Filter 
+                mealFilter={mealFilter} 
+                setMealFilter={setMealFilter} 
+                onFilterChange={onFilterChange} 
+            />
+            <RecipeContainer 
+                recipes={recipes} 
+                onRecDetails={onRecDetails} 
+            />
         </div>
     )
 }
