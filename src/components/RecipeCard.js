@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Card } from "semantic-ui-react";
 
-function RecipeCard({ recipe, onRecDetails }) {
+function RecipeCard({ recipe }) {
 
 
     return (

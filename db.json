@@ -15,7 +15,8 @@
       "comments": [
         "From Amanda's trip to Austin, TX.",
         "Sometimes we cook the meat and onion together to save some time",
-        "Love this recipe!"
+        "Love this recipe!",
+        "test"
       ],
       "instructions": [
         "Start with frying frozen hash browns in a hot skillet. Season with garlic powder, onion powder, salt and pepper. Flip when brown and crispy.",
@@ -94,7 +95,7 @@
       "preptime": "30",
       "cooktime": "40",
       "servings": "8",
-      "favorite": true,
+      "favorite": false,
       "comments": [],
       "instructions": [
         "Combine the dry ingredients for the dumplings in a bowl. Mix the margarine with the dry mixture until crumbly. Add the soy milk, stirring until moistened. Add more soy milk, as needed, if the mixture is too dry. Knead the dough for 30 seconds on a well-floured surface, then roll to 1/8-inch thickness and cut into 1/2-inch squares.",

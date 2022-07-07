@@ -14,6 +14,15 @@ function App() {
   const [displayRecipes, setDisplayRecipes] = useState([]);
 
 
+  function handleAddRecipe() {
+    fetch(`http://localhost:3000/recipes`)
+    .then(r => r.json())
+    .then(recipes => {
+      setRecipes(recipes);
+      setDisplayRecipes(recipes)
+    });
+  }
+
   useEffect(() => {
     fetch(`http://localhost:3000/recipes`)
     .then(r => r.json())
@@ -53,7 +62,7 @@ function App() {
     <div>
         <NavBar /> 
         <Routes>
-          <Route path="/recipeform" element={<RecipeForm />} />
+          <Route path="/recipeform" element={<RecipeForm handleAddRecipe={handleAddRecipe} />} />
           <Route 
             path={"/recipes/:id"} 
             element={<RecipeDetails 

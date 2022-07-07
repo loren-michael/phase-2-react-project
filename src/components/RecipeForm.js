@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function RecipeForm() {
+function RecipeForm({ handleAddRecipe }) {
     const [numIng, setNumIng] = useState([0, 1, 2, 3, 4]);
     const [numInst, setNumInst] = useState([0, 1, 2, 3, 4]);
     const [commArr, setCommArr] = useState([]);
@@ -26,7 +26,7 @@ function RecipeForm() {
         const ingElements = document.getElementsByClassName("add-ingredient");
         const convIng = [...ingElements];
         const newIngArr = convIng.filter((ing) => ing.value.length > 0).map((ing) => ing.value)
-        console.log(newIngArr);
+        // console.log(newIngArr);
         setNewRecipe({...newRecipe, ingredients: newIngArr});
     }
 
@@ -34,7 +34,7 @@ function RecipeForm() {
         const instElements = document.getElementsByClassName("add-instruction");
         const convInst = [...instElements];
         const newInstArr = convInst.filter((inst) => inst.value.length > 0).map((ing) => ing.value);
-        console.log(newInstArr);
+        // console.log(newInstArr);
         setNewRecipe({...newRecipe, instructions: newInstArr});
     }
 
@@ -64,7 +64,7 @@ function RecipeForm() {
             body: JSON.stringify(newRecipe)
         })
         .then(navigate("/"))
-        .then(window.location.reload())
+        .then(() => handleAddRecipe())
     }
 
 
