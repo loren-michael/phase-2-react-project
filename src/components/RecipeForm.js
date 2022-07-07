@@ -26,7 +26,6 @@ function RecipeForm({ handleAddRecipe }) {
         const ingElements = document.getElementsByClassName("add-ingredient");
         const convIng = [...ingElements];
         const newIngArr = convIng.filter((ing) => ing.value.length > 0).map((ing) => ing.value)
-        // console.log(newIngArr);
         setNewRecipe({...newRecipe, ingredients: newIngArr});
     }
 
@@ -34,7 +33,6 @@ function RecipeForm({ handleAddRecipe }) {
         const instElements = document.getElementsByClassName("add-instruction");
         const convInst = [...instElements];
         const newInstArr = convInst.filter((inst) => inst.value.length > 0).map((ing) => ing.value);
-        // console.log(newInstArr);
         setNewRecipe({...newRecipe, instructions: newInstArr});
     }
 
