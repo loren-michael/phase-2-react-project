@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import Home from "./Home";
 import RecipeForm from "./RecipeForm";
 import RecipeDetails from "./RecipeDetails";
+import ClickMe from "./clickme"
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -60,6 +61,7 @@ function App() {
 
   return (
     <div>
+      {/* <ClickMe /> */}
         <NavBar /> 
         <Routes>
           <Route path="/recipeform" element={<RecipeForm handleAddRecipe={handleAddRecipe} />} />

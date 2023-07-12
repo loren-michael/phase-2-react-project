@@ -11,7 +11,7 @@
       "preptime": "15",
       "cooktime": "15",
       "servings": "2",
-      "favorite": true,
+      "favorite": false,
       "comments": [
         "From Amanda's trip to Austin, TX.",
         "Sometimes we cook the meat and onion together to save some time",
@@ -54,7 +54,7 @@
       "preptime": "10",
       "cooktime": "15",
       "servings": "12",
-      "favorite": true,
+      "favorite": false,
       "comments": [
         "I like to freeze these on a cookie sheet and then place frozen dough balls into a ziploc bag to save space."
       ],
@@ -290,7 +290,7 @@
       "preptime": "60",
       "cooktime": "30",
       "servings": "4",
-      "favorite": true,
+      "favorite": false,
       "comments": [],
       "instructions": [
         "To make the spicy sunflower seeds, preheat the oven to 350°F. Toss the seeds with the other ingredients in a large bowl, until well coated. Spread the coated seeds out on a baking sheet in a thin even layer. Bake for 15 minutes or until well toasted, allow to cool completely before using.",
